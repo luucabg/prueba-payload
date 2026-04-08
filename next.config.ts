@@ -28,6 +28,10 @@ const nextConfig: NextConfig = {
           protocol: url.protocol.replace(':', '') as 'http' | 'https',
         }
       }),
+      {
+        hostname: 'coloss-development.com',
+        protocol: 'https',
+      },
     ],
   },
   webpack: (webpackConfig) => {

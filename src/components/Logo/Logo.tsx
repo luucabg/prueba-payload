@@ -8,22 +8,25 @@ interface Props {
 }
 
 export const Logo = (props: Props) => {
-  const { loading: loadingFromProps, priority: priorityFromProps, className } = props
-
-  const loading = loadingFromProps || 'lazy'
-  const priority = priorityFromProps || 'low'
+  const { className } = props
 
   return (
-    /* eslint-disable @next/next/no-img-element */
-    <img
-      alt="Payload Logo"
-      width={193}
-      height={34}
-      loading={loading}
-      fetchPriority={priority}
-      decoding="async"
-      className={clsx('max-w-[9.375rem] w-full h-[34px]', className)}
-      src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-logo-light.svg"
-    />
+    <div className={clsx('inline-flex items-center gap-3', className)}>
+      <span className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-[#d0a46a]/30 bg-[#d0a46a]/10">
+        <span className="absolute inset-[7px] rounded-full border border-[#d0a46a]/16" />
+        <span className="font-display relative text-2xl font-semibold tracking-[0.26em] text-[#d0a46a]">
+          C
+        </span>
+      </span>
+
+      <span className="flex flex-col">
+        <span className="text-[0.62rem] font-semibold uppercase tracking-[0.42em] text-[#d0a46a]">
+          Coloss
+        </span>
+        <span className="font-display -mt-0.5 text-[1.55rem] leading-none tracking-[0.18em] text-current">
+          Development
+        </span>
+      </span>
+    </div>
   )
 }
